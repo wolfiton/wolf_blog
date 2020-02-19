@@ -44,7 +44,7 @@ defmodule WolfBlog.MixProject do
       {:absinthe, "~> 1.4"},
       {:absinthe_plug, "~> 1.4.7"},
       {:absinthe_phoenix, "~> 1.4"}
-
+    ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
