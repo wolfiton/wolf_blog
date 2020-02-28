@@ -5,7 +5,12 @@ defmodule WolfBlogWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", WolfBlogWeb do
+  scope "/" do
     pipe_through :api
+
+    forward("/api", Absinthe.Plug,  schema: WolfBlogWeb.Schema)
+
+    forward("/graphiql", Absinthe.Plug.GraphiQL, schema: WolfBlogWeb.Schema, interface: :playground)
+
   end
 end
