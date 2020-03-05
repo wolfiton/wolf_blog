@@ -16,6 +16,7 @@ defmodule WolfBlog.DataCase do
 
   use ExUnit.CaseTemplate
 
+
   using do
     quote do
       alias WolfBlog.Repo

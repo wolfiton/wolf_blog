@@ -34,7 +34,11 @@ defmodule WolfBlogWeb.ConnCase do
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(WolfBlog.Repo, {:shared, self()})
     end
+    conn = 
+    Phoenix.ConnTest.build_conn()
+    |> Plug.Conn.put_req_header("content-type", "application/json")
 
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
+
+    {:ok, conn: conn}
   end
 end
