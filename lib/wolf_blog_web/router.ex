@@ -8,9 +8,11 @@ defmodule WolfBlogWeb.Router do
   scope "/" do
     pipe_through :api
 
-    forward("/api", Absinthe.Plug,  schema: WolfBlogWeb.Schema)
+    forward "/graphql", Absinthe.Plug, schema: WolfBlogWeb.Schema
 
-    forward("/graphiql", Absinthe.Plug.GraphiQL, schema: WolfBlogWeb.Schema, interface: :playground)
-
+    forward("/graphiql", Absinthe.Plug.GraphiQL,
+      schema: WolfBlogWeb.Schema,
+      interface: :playground
+    )
   end
 end
