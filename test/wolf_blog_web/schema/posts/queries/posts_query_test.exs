@@ -24,6 +24,7 @@ defmodule WolfBlogWeb.Schema.Posts.Queries.PostsQueryTest do
 
 
       assert json_response(res, 200)["data"]["posts"] == [%{"title" => "Absinthe is great"}]
+      IO.inspect(json_response(res, 200), label: "myres")
     end
   end
 end
